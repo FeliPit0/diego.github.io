@@ -1,0 +1,157 @@
+/* Barra de contacto y logo */
+.contact-bar {
+    background-color: #4b5463;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.logo img {
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+    /* Aumenta significativamente el difuminado alrededor de los bordes del logo */
+    filter: drop-shadow(0 0 20px #6080ae); /* Aumentado a 50px y opacidad a 0.7 */
+    transition: filter 0.3s ease; /* Transición suave */
+}
+
+.logo span {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.logo small {
+    display: block;
+    font-family: Arial;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.contact-info {
+    display: flex;
+    gap: 300px;
+    align-items: center;
+    color: #eeeeee;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    color: #eeeeee;
+}
+
+.contact-item img {
+    height: 20px;
+    margin-right: 10px;
+}
+.contact-item span {
+    font-size: 16px;
+    color: #333;
+    color: #eeeeee;
+}
+
+/* Menú de navegación */
+.main-nav {
+    background-color: #6081ad;
+    padding: 10px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh; /* Hace que el cuerpo ocupe el 100% de la altura de la ventana */
+    overflow: show; /* Evita barras de desplazamiento */
+}
+
+.slider {
+    position: relative;
+    width: 100vw; /* Hace que el slider ocupe todo el ancho de la ventana */
+    height: 100vh; /* Hace que el slider ocupe toda la altura de la ventana */
+}
+
+.slides {
+    display: flex;
+    height: 100%; /* Asegura que el contenedor de las imágenes ocupe toda la altura del slider */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%; /* Asegura que cada slide ocupe toda la altura del slider */
+    position: relative;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área del slide sin distorsión */
+    display: block;
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-btn {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+#slide1:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+input[type="radio"] {
+    display: none; /* Oculta los inputs de radio */
+}
